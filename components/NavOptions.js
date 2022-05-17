@@ -27,7 +27,7 @@ const NavOptions = () => {
   const navigation = useNavigation();
   const origin = useSelector(selectOrigin);
   return (
-    <View style={tw`h-65 w-90`}>
+    <View style={tw`h-65 w-95 space-evenly`}>
 
     <FlatList
       data={data}
@@ -36,18 +36,20 @@ const NavOptions = () => {
       renderItem={({item})=>(
         <TouchableOpacity
         onPress={()=> navigation.navigate(item.screen)}
-        style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-200 w-40`}
-        disabled={!origin}
-        >
+        style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-200 w-45 `}
+        disabled={!origin}>
+
           <View style={tw`${!origin && "opacity-20" }`}>
             <Image
               style={{
-                width:120,
+                width:130,
                 height:120,
                 resizeMode:"contain"}} 
                 source={{ uri : item.image }}
               />
-              <Text style={tw`mt-2 text-lg font-semibold`}>{item.title}</Text>
+              <Text style={tw`mt-2 text-lg font-semibold`}>
+                {item.title}
+              </Text>
               <Icon
                 style={tw`p-2 bg-black rounded-full w-10 mt-4`}
                 name="arrowright" 
@@ -56,7 +58,7 @@ const NavOptions = () => {
                 />
           </View>
         </TouchableOpacity>
-    )}
+      )}
     />
     </View>
   );
