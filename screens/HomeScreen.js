@@ -49,7 +49,7 @@ const HomeScreen = () => {
                   fetchDetails={true}
                   minLength = {2}
                   query={{
-                    key:"AIzaSyCAB58dnrj-VPCNl99ptPM00CDo9Uomv_A",
+                    key:GOOGLE_MAPS_APIKEY,
                     language:"en"
                   }}
               />
